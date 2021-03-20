@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <base href="/">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ghyrate data bulk flag</title>
+    <script  type="text/html" src="/test.js" defer></script>
+    <script>
+        function showEntities(data){
+          const entityDiv = document.querySelector('#bulk-data');
+
+          data.data.forEach(entity => {
+              const entityElement = document.createElement('p');
+
+              entityElement.innerText = 'Entity Legal Name : ${entity.entityId}';
+
+              entityDiv.append(entityElement);
+          });   
+        }
+
+      </script>
+  </head>
+  <body>
+    <input type = "button" onclick = "showEntities(data)" value = "Display">
+    <div id=’bulk-data’></div>
+  </body>
+</html>

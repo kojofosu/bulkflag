@@ -1,4 +1,4 @@
-const fetch = require("node-fetch");
+import fetch from '/node_modules/node-fetch';
 
 fetch("http://localhost:7540/coreservices/v1/cases/bulk/unassigned/ENTITY", {
     method: "GET",
@@ -8,5 +8,21 @@ fetch("http://localhost:7540/coreservices/v1/cases/bulk/unassigned/ENTITY", {
     }
 })
 .then((response) => response.json())
-.then((data) => console.log(data))
-.catch((error) => console.log(error))
+.then((data) => {
+    console.log(data)
+    // showEntities(data.data)
+})
+.catch((error) => console.log(error));
+
+// showEntities = data => {
+//     const entityDiv = document.querySelector('#bulk-data');
+
+//     data.forEach(entity => {
+//         const entityElement = document.createElement('p');
+
+//         entityElement.innerText = 'Entity Legal Name : ${entity.entityId}';
+
+//         entityDiv.append(entityElement);
+//     });
+
+// }
